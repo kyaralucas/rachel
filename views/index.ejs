@@ -1,0 +1,150 @@
+<html>
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+
+<head>
+</head>
+
+<body>
+
+
+
+    <!-- <p>This grid layout contains six columns and three rows:</p> -->
+
+    <div class="grid-container">
+        <div class="item1">
+            <h3>Contemplating The Template</h3>
+
+            <nav id="primary_nav_wrap">
+                <ul>
+                    <li><a href="#">Choose Chapter</a>
+                        <ul>
+                            <li><a href="#">Chapter 1</a></li>
+                            <li><a href="#">Chapter 2</a></li>
+                            <li><a href="#">Chapter 3</a></li>
+                        </ul>
+                    </li>
+            </nav>
+
+
+
+
+        </div>
+
+        <div class="item2"></div>
+        <div class="item3">
+        </div>
+
+        <div class="item4">
+
+            <main class="container">
+                <div>
+                    <p class="demo-text">This thesis takes us down the rabbit hole that is the ubiquitous template. Beyond the edges of the standardised pages of this work, these designs are at best seen as a vague, inconsequential habit within “everyday averageness” — and
+                        at worst experienced as the main cause for the flatting of our online visual culture. Neither of these perceptions are necessarily positive — and offer no developmental possibilities for a tool that, whether we like it or not,
+                        plays an important role in our shared network. Looking at different practices of both professionals and amateur users who identify, activate and enter into a dialogue with template structures — this thesis refuses to play into
+                        the overreaching pessimistic attitude towards these designs. Stripping the template down to its essence in order to see why we continue to use and create them, these texts start from (what seems like) a basic question about the
+                        meaning of creating something that is meant to be repeated, and aim to offer n ew possibilities of understanding the hold that these designs have on us (and vice versa) — and what we can get out of them. </p>
+                </div>
+            </main>
+
+
+        </div>
+
+
+        <div class="item5">
+
+
+
+
+
+
+            <main class="container">
+                <div class="controls">
+                    <!-- Weight Controls -->
+                    <div class="slider-container">
+                        <input type="range" min="100" max="900" value="500" class="slider" id="text-weight" name="text-weight" data-index="0">
+                        <div class="slider-controls">
+                            <label for="text-weight" class="slider-label">
+                Weight: <span class="output" data-index="0"></span>   
+              </label>
+                            <!-- <button class="button" data-index="0">
+                Reset
+              </button> -->
+                        </div>
+                    </div>
+                    <!-- Width Controls -->
+                    <div class="slider-container">
+                        <input type="range" min="75" max="100" value="100" class="slider" id="text-width" name="text-width" data-index="1">
+                        <div class="slider-controls">
+                            <label for="text-width" class="slider-label">
+                Width: <span class="output" data-index="1"></span>  
+              </label>
+                            <!-- <button class="button" data-index="1">
+                Reset
+              </button> -->
+                        </div>
+                    </div>
+                    <!-- Slant Controls -->
+                    <div class="slider-container">
+                        <input type="range" min="0" max="12" value="0" class="slider" id="text-slant" name="text-slant" data-index="2">
+                        <div class="slider-controls">
+                            <label for="text-slant" class="slider-label">
+                Slant: <span class="output" data-index="2"></span>  
+              </label>
+                            <!-- <button class="button" data-index="2">
+                Reset
+              </button> -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        const container = document.querySelector(".container");
+        const sliders = document.querySelectorAll(".slider");
+        const sliderValues = document.querySelectorAll(".output");
+        const buttons = document.querySelectorAll(".button");
+
+        // Display property values
+        for (let i = 0; i < sliders.length; i++) {
+            sliderValues[i].innerHTML = sliders[i].value;
+        }
+
+        // Update text property and displayed property value for each slider
+        sliders.forEach(slider => {
+            const sliderIndex = slider.getAttribute("data-index");
+            const output = document.querySelector(`.output[data-index="${sliderIndex}"]`);
+            slider.oninput = function() {
+                container.style.setProperty(`--${this.id}`, this.value);
+                output.innerHTML = this.value;
+            };
+        });
+
+        // Reset text property and update display property value for each slider
+        buttons.forEach(button => {
+            const buttonIndex = button.getAttribute("data-index");
+            const resetOutput = document.querySelector(
+                `.output[data-index="${buttonIndex}"]`
+            );
+            const resetSlider = document.querySelector(
+                `.slider[data-index="${buttonIndex}"]`
+            );
+            button.onclick = function() {
+                container.style.removeProperty(`--${resetSlider.id}`);
+                resetOutput.innerHTML = resetSlider.defaultValue;
+                resetSlider.value = resetSlider.defaultValue;
+                console.log(resetSlider.defaultValue);
+            };
+        });
+    </script>
+
+</html>

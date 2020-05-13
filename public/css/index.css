@@ -1,0 +1,302 @@
+#primary_nav_wrap {
+    margin-top: 15px
+}
+
+#primary_nav_wrap ul {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0
+}
+
+#primary_nav_wrap ul a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 32px;
+    padding: 0 15px;
+    font-family: "CenturySchoolbookMonospaceBT";
+}
+
+#primary_nav_wrap ul li {
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0
+}
+
+#primary_nav_wrap ul li.current-menu-item {
+    background: #ddd
+}
+
+#primary_nav_wrap ul li:hover {
+    /* background: #f6f6f6 */
+}
+
+#primary_nav_wrap ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    padding: 0
+}
+
+#primary_nav_wrap ul ul li {
+    float: none;
+    width: 200px
+}
+
+#primary_nav_wrap ul ul a {
+    line-height: 120%;
+    padding: 10px 15px
+}
+
+#primary_nav_wrap ul ul ul {
+    top: 0;
+    left: 100%
+}
+
+#primary_nav_wrap ul li:hover>ul {
+    display: block
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.item2 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.item3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 30;
+}
+
+.item4 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 30;
+}
+
+.item5 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 31;
+    grid-row-end: 34;
+}
+
+
+/* Load the variable fonts */
+
+@font-face {
+    font-family: 'Roboto VF';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/57225/Roboto-VF.woff2') format('woff2-variations');
+    font-stretch: 75% 100%;
+    font-style: oblique 0deg 12deg;
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: 'CenturySchoolbookMonospaceBT';
+    src: url('../fonts/Century-Schoolbook-Monospace-BT.eot');
+    src: url('../fonts/Century-Schoolbook-Monospace-BT.woff') format('woff');
+    font-stretch: 75% 100%;
+    font-style: oblique 0deg 12deg;
+    font-weight: 100 900;
+}
+
+ :root {
+    --text-weight: 200;
+    --text-width: 100;
+    --text-slant: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+h3 {
+    font-family: "CenturySchoolbookMonospaceBT";
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    font-family: "Roboto VF";
+    margin: 0 auto;
+    max-width: 60rem;
+    padding: 3rem;
+    text-align: center;
+}
+
+.demo-text {
+    text-align: left;
+    font-size: 1rem;
+    font-stretch: var(--text-width);
+    font-style: oblique var(--text-slant);
+    font-weight: var(--text-weight);
+    font-variation-settings: "wght" var(--text-weight), "wdth" var(--text-width), "slnt" var(--text-slant);
+    margin: 0;
+}
+
+.controls {
+    margin-top: 1rem;
+}
+
+.slider-container:not(:first-child) {
+    margin-top: 1rem;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.slider-label {
+    font-family: 'CenturySchoolbookMonospaceBT';
+    font-size: 0.75rem;
+    font-style: normal;
+    font-variation-settings: "slnt" var(--text-slant);
+    font-weight: 650;
+}
+
+.output {
+    font-style: normal;
+    font-variation-settings: "slnt" var(--text-slant);
+    font-weight: 400;
+}
+
+.slider {
+    margin-top: 2.8vh;
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    width: 99%;
+    /* Full-width */
+    height: 2px;
+    /* Specified height */
+    background: #A4AAB3;
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    opacity: 1;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+
+/* .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 1rem;
+    border-radius: .25rem;
+    background: #dee7ec;
+    outline: none;
+} */
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 3.5vh;
+    /* Set a specific slider handle width */
+    height: 3.5vh;
+    /* Slider handle height */
+    border-radius: 100%;
+    cursor: pointer;
+    /* Cursor on hover */
+    /* Knob: */
+    background: #FFFFFF;
+    border: 0 solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.10), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.slider::-moz-range-thumb {
+    width: 3.5vh;
+    /* Set a specific slider handle width */
+    height: 3.5vh;
+    /* Slider handle height */
+    border-radius: 100%;
+    cursor: pointer;
+    /* Cursor on hover */
+    /* Knob: */
+    background: #FFFFFF;
+    border: 0 solid rgba(0, 0, 0, 0.50);
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.10), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+
+/* .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: #456bd9;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: #456bd9;
+    cursor: pointer;
+} */
+
+.slider::-webkit-slider-thumb:active {
+    cursor: -webkit-grabbing;
+}
+
+.slider::-moz-range-thumb:active {
+    cursor: -moz-grabbing;
+}
+
+.button {
+    background: #fff;
+    border: 3px solid #dee7ec;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 1;
+    padding: .25rem .75rem;
+    transition: background ease-in .2s;
+}
+
+.button:hover,
+.button:focus {
+    background: #eaf0f3;
+}
